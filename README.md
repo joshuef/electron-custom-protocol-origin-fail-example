@@ -1,4 +1,12 @@
-# electron-quick-start
+# Custom protocol Error Example
+
+Here we've a custom protocol setup (`custom://`), and loading a page over this which makes a request with `Origin` headers set, (which effectively just loads `localhost`) causes the Browserwindow/webview element (happens to both) to  crash.
+
+This example is set to run against the https://github.com/alicoding/react-webpack-babel which serves `localhost://8888` when you run `yarn dev`. (Which is my use case).
+
+So trying to access `custom://p:8888` causes the example app to crash.
+
+Deleting the `Origin` header or the `Access-Control-Allow-Origin` header returned prevents crash (though obviously the request fails.)
 
 **Clone and run for a quick way to see Electron in action.**
 
